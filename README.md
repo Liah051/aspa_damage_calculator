@@ -1,1 +1,4 @@
 # aspa_damage_calculator
+
+適当に作りました
+問題があったらdiscordのringo051に言ってください
