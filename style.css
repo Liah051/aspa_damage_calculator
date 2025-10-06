@@ -1,0 +1,228 @@
+body {
+  font-family: "Segoe UI", sans-serif;
+  background: #f0f4f9;
+  text-align: center;
+  margin: 0;
+  padding: 20px;
+}
+
+h1 {
+  color: #333;
+  margin-bottom: 20px;
+}
+
+.input-section {
+  margin-bottom: 20px;
+}
+
+label {
+  margin: 0 10px;
+}
+
+.card-container {
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap;
+  gap: 20px;
+  margin-bottom: 30px;
+}
+
+.card {
+  background: white;
+  border-radius: 12px;
+  box-shadow: 0 2px 6px rgba(0,0,0,0.2);
+  padding: 10px;
+  width: 140px;
+}
+
+.card img {
+  width: 100%;
+  border-radius: 8px;
+}
+
+.card input {
+  width: 50px;
+  text-align: center;
+  margin-top: 5px;
+}
+
+.advanced-section {
+  margin-top: 10px;
+}
+
+.advanced-toggle {
+  background: none;
+  border: none;
+  color: #1976d2;
+  font-weight: bold;
+  cursor: pointer;
+  font-size: 16px;
+}
+
+.advanced-toggle:hover {
+  text-decoration: underline;
+}
+
+.advanced-options {
+  display: none;
+  margin-top: 8px;
+  background: #f9f9f9;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  padding: 10px;
+  width: 260px;
+  margin: 10px auto;
+  text-align: left;
+}
+
+.advanced-section {
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+#toggleAdvanced {
+  background: #444;
+  color: white;
+  border: none;
+  padding: 6px 12px;
+  border-radius: 6px;
+  cursor: pointer;
+}
+
+#advancedContent.hidden {
+  display: none;
+}
+
+.advanced-description {
+  font-size: 16px;
+  color: #444;
+  background: #f9f9f9;
+  border: 4px solid #ccc;
+  padding: 6px 10px;
+  border-radius: 6px;
+  margin: 10px auto; 
+  width: fit-content;   
+  text-align: center;
+  line-height: 1.5;
+}
+
+
+.heal-section, .starlight-section, .coin-section ,.mark-section{
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  margin-top: 10px;
+}
+
+
+.knife-section , .flashlight-section ,.star-coin-hammer-section ,.sight-section{
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+  margin-top: 10px;
+}
+
+.knife-wrap , .flashlight-wrap , .star-coin-hammer-wrap , .sight-wrap {
+  position: relative;
+  width: 75px;
+  height: 75px;
+  overflow: hidden;
+  cursor: pointer;
+}
+
+.knife-icon , .flashlight-icon , .star-coin-hammer-icon , .sight-icon {
+  position: relative; 
+  width: 64px; 
+  height: 64px;
+  display: inline-block;
+  cursor: pointer;
+}
+
+.knife-icon .bg , .flashlight-icon .bg , .star-coin-hammer-icon .bg , .sight-icon .bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 1;
+}
+
+.knife-icon .fg ,  .flashlight-icon .fg ,  .star-coin-hammer-icon .fg , .sight-icon .fg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  object-fit: contain;
+  z-index: 2;   
+  pointer-events: none;  
+}
+
+
+.item.knife.active .knife-wrap , .item.flashlight.active .flashlight-wrap 
+, .item.star-coin-hammer.active .star-coin-hammer-wrap , .item.sight.active .sight-wrap {
+  outline: 3px solid #b388ff;
+  border-radius: 10px;
+  transform: scale(1.05);
+  transition: all 0.2s;
+}
+
+.item.knife.active , .item.flashlight.active , .item.star-coin-hammer.active 
+, .item.sight.active {
+  outline: 3px solid gold;
+  border-radius: 12px;
+  transform: scale(1.1);
+  transition: all 0.2s ease;
+  box-shadow: 0 0 12px rgba(255, 215, 0, 0.8);
+}
+
+
+#expectedDamage {
+  font-weight: bold;  
+  background-color: white; 
+  padding: 8px 12px;
+  border: 1px solid #ccc; 
+  display: inline-block;  
+  margin-bottom: 4px;
+  border-radius: 4px;  
+}
+
+
+#resultTable {
+  margin: 0 auto;
+  border-collapse: collapse;
+  width: 300px;
+  background: white;
+}
+
+#resultTable th, #resultTable td {
+  border: 1px solid #aaa;
+  padding: 6px;
+}
+
+button {
+  background: #1976d2;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 6px;
+  cursor: pointer;
+}
+button:hover {
+  background: #5fcefa;
+}
+
+
+.card.reset-animation {
+  animation: flash 0.3s ease;
+}
+
+@keyframes flash {
+  0%   { background-color: #ffff99; transform: scale(0.95); }
+  50%  { background-color: #ffcc66; transform: scale(1.05); }
+  100% { background-color: white; transform: scale(1); }
+}
+
+

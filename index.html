@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+  <meta charset="UTF-8">
+  <title>アスパダメージ計算機</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <h1>アスパダメージ計算機</h1>
+
+  <div class="input-section">
+    <label>攻撃力: <input type="number" id="baseAttack" value="4"></label>
+    <label>防御力: <input type="number" id="baseDefense" value="2"></label>
+  </div>
+
+  <h2>攻撃カード</h2>
+  <div id="attackCards" class="card-container"></div>
+
+  <h2>防御カード</h2>
+  <div id="defenseCards" class="card-container"></div>
+
+  <div class="advanced-section">
+    <button id="toggleAdvanced">Advanced ▶</button>
+    <!-- Advanced セクション -->
+
+    <div id="advancedContent" class="hidden">
+      <p class="advanced-description">
+        計算したいチップを選択してください。<br>
+        クリックで選択、再クリックで解除します。<br>
+        各数値は攻撃する前の現在の状態を入力してください。
+      </p>
+      <div class="heal-section">
+        <img src="images\Buff_Heal.webp" alt="ヒールスタック" width="50">
+        <label>ヒールスタックの数：</label>
+        <input type="number" id="healStack" min="0" value="0" style="width:60px;">
+      </div>
+
+      <div class="knife-section">
+        <div class="item knife" data-item="purpleKnife">
+          <div class="knife-icon">
+            <img src="images/Relicbgpurple.webp" class="bg">
+            <img src="images/UtilityKnife.webp" class="fg">
+          </div>
+        </div>
+        <div class="item knife" data-item="goldKnife">
+          <div class="knife-icon">
+            <img src="images/Relicbgorange.webp" class="bg">
+            <img src="images/UtilityKnife.webp" class="fg">
+          </div>
+        </div>
+      </div>
+
+      <div class="starlight-section">
+        <img src="images/Buff_Starlight.webp" alt="スターライトスタック" width="50">
+        <label>スターライトスタックの数：</label>
+        <input type="number" id="starlightStack" min="0" value="0" style="width:60px;">
+      </div>
+
+      <div class = "flashlight-section">
+        <div class="item flashlight" data-item="goldflashlight">
+          <div class="flashlight-icon">
+            <img src="images/Relicbgorange.webp" class="bg">
+            <img src="images/Flashlight.webp" class="fg">
+          </div>
+        </div>
+      </div>
+
+      <div class="coin-section">    
+        <img src="images/Coin.webp" alt="コイン" width="50">
+        <label>コインの数：</label>
+        <input type="number" id="coinCount" min="0" value="0" style="width:60px;">
+      </div>
+
+      <div class="star-coin-hammer-section">
+        <div class="item star-coin-hammer" data-item="starCoinHammer">
+          <div class="star-coin-hammer-icon">
+            <img src="images/Relicbgorange.webp" class="bg">
+            <img src="images/StarCoinHammer.webp" class="fg">
+          </div>
+        </div>
+      </div>
+
+      <div class="mark-section">
+        <img src="images\Buff_Mark.webp" alt="マーク" width="50">
+        <label>マークスタックの数：</label>
+        <input type="number" id="markCount" min="0" value="0" style="width:60px;">
+      </div>
+
+      <div class="sight-section">
+        <div class="item sight" data-item="purplesight">
+          <div class="sight-icon">
+            <img src="images/Relicbgpurple.webp" class="bg">
+            <img src="images/Sight.webp" class="fg">
+          </div>
+        </div>
+        <div class="item sight" data-item="goldsight">
+          <div class="sight-icon">
+            <img src="images/Relicbgorange.webp" class="bg">
+            <img src="images/Sight.webp" class="fg">
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+
+  <button id="calculateBtn">ダメージを計算</button>
+
+  <button id="resetBtn">カードをリセット</button>
+
+
+  <h2>結果</h2>
+  <div id="expectedDamage">期待値: -</div>
+  <table id="resultTable">
+    <thead>
+      <tr><th>ダメージ</th><th>確率(%)</th></tr>
+    </thead>
+    <tbody></tbody>
+  </table>
+
+  <script src="script.js"></script>
+</body>
+</html>
