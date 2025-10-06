@@ -1,4 +1,4 @@
 # aspa_damage_calculator
 
-適当に作りました
+適当に作りました\n
 問題があったらdiscordのringo051に言ってください
